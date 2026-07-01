@@ -41,7 +41,7 @@
     }
 
     /* ─────────────────────────── NAV ─────────────────────────── */
-    nav {
+    body > nav:not(.drawer) {
       position: fixed;
       inset: 0 0 auto 0;
       z-index: 200;
@@ -102,6 +102,7 @@
       position: fixed;
       inset: 70px 0 0 0;
       z-index: 190;
+      min-height: calc(100svh - 70px);
       background: var(--bg);
       padding: 36px 32px 40px;
       flex-direction: column;
@@ -538,6 +539,9 @@
         gap: 52px;
         padding: 52px 24px 80px;
       }
+      .drawer {
+        padding: 28px 24px 36px;
+      }
       h1 { font-size: clamp(28px, 7vw, 40px); }
       .lead { max-width: 100%; }
 
@@ -574,6 +578,13 @@
       .trust { flex-wrap: wrap; gap: 14px; }
       .trust-sep { display: none; }
       .chips { gap: 6px; }
+      .drawer {
+        padding: 22px 18px 28px;
+      }
+      .drawer a {
+        font-size: 18px;
+        padding: 12px 0;
+      }
       .hero-wrap {
         padding: 36px 18px 72px;
         gap: 40px;
