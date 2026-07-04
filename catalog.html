@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
+  <title>Каталог недвижимости и услуг в Дивеево | Дивеево Интеграл</title>
+  <meta name="description" content="Каталог Дивеево Интеграл: дома, квартиры, дачи, участки и услуги по сопровождению сделок, ипотеке, документам, газу и воде.">
+  <meta property="og:title" content="Каталог Дивеево Интеграл">
+  <meta property="og:description" content="50 реальных позиций: недвижимость в Дивеево и рядом, а также услуги по сделкам, документам и коммуникациям.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="catalog-page">
+  <div class="site-shell">
+    <nav class="topbar" aria-label="Основная навигация">
+      <a href="index.html" class="logo">
+        <div class="logo-mark"><img src="landing_logo_x2.jpg" alt=""></div>
+        <div>
+          <div class="logo-title">Дивеево Интеграл</div>
+          <div class="logo-subtitle">Каталог недвижимости и услуг</div>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="buy.html">Купить</a></li>
+        <li><a href="sell.html">Продать</a></li>
+        <li><a href="services-documents.html">Документы</a></li>
+        <li><a href="catalog.html" class="active">Каталог</a></li>
+      </ul>
+      <div class="nav-side">
+        <a href="tel:+79601711320" class="nav-contact">+7 (960) 171-13-20</a>
+        <a href="https://t.me/yul_ermilova_diveevo" class="nav-btn desktop-only" target="_blank" rel="noopener noreferrer">Связаться</a>
+      </div>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="drawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <nav class="drawer" id="drawer" aria-label="Мобильное меню">
+      <a href="index.html">Главная</a>
+      <a href="buy.html">Купить</a>
+      <a href="sell.html">Продать</a>
+      <a href="services-documents.html">Документы</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="https://t.me/yul_ermilova_diveevo" class="drawer-cta" target="_blank" rel="noopener noreferrer">Написать нам</a>
+    </nav>
+
+    <main>
+      <section class="page-hero catalog-hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span>50 реальных позиций</div>
+            <h1>Каталог Дивеево Интеграл, где можно выбрать объект и сразу решить сопутствующие вопросы</h1>
+            <p class="lead">Здесь собраны дома, квартиры, дачи и участки, а также помощь с ипотекой, документами, подключением газа и воды, оформлением и сопровождением сделки. Вы сразу видите не только варианты недвижимости, но и тех, кто поможет довести всё до результата.</p>
+            <div class="hero-tags">
+              <span>27 объектов недвижимости</span>
+              <span>23 услуги</span>
+              <span>Дивеево и рядом</span>
+              <span>Под жизнь, аренду и инвестиции</span>
+            </div>
+            <div class="hero-actions">
+              <a href="#catalog-results" class="btn-primary">Открыть каталог</a>
+              <a href="https://t.me/yul_ermilova_diveevo" class="btn-secondary" target="_blank" rel="noopener noreferrer">Запросить подборку</a>
+            </div>
+            <div class="catalog-proof">
+              <div class="catalog-proof-card">
+                <strong>Не только продажа</strong>
+                <span>Сразу видно, с кем купить, оформить, узаконить или подключить</span>
+              </div>
+              <div class="catalog-proof-card">
+                <strong>Быстрый вход</strong>
+                <span>Фильтрация по формату, задаче и поисковому запросу</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-panel catalog-hero-panel">
+            <div class="hero-visual">
+              <div class="catalog-hero-summary">
+                <div>
+                  <h3>Каталог, который помогает выбрать спокойно и без лишних сомнений</h3>
+                  <div class="badge">Объекты + услуги</div>
+                </div>
+                <div class="catalog-hero-stats">
+                  <div class="catalog-stat-card">
+                    <span class="catalog-stat-label">Что внутри</span>
+                    <strong>Дома, квартиры, дачи, ипотека, документы</strong>
+                  </div>
+                  <div class="catalog-stat-card">
+                    <span class="catalog-stat-label">Сценарий</span>
+                    <strong>Выбрать объект и сразу решить сопутствующие вопросы</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-copy">
+              <p>Здесь человек видит не просто объявления, а понятную помощь вокруг недвижимости: от выбора объекта до документов, согласований и выхода на сделку. Это снимает лишние вопросы уже на первом знакомстве.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell catalog-toolbar-shell" aria-labelledby="catalog-filter-title">
+        <div class="container">
+          <div class="catalog-toolbar">
+            <div class="catalog-toolbar-copy">
+              <div class="section-kicker">Быстрый выбор</div>
+            <h2 id="catalog-filter-title">Фильтры, которые помогают быстро убрать лишнее и перейти к нужным вариантам</h2>
+              <p>Можно выбрать только недвижимость, только услуги, отфильтровать по задаче и сразу найти конкретную локацию, тип объекта или нужную услугу по ключевым словам.</p>
+            </div>
+
+            <div class="catalog-search">
+              <label class="catalog-search-label" for="catalog-search-input">Поиск по названию, локации или услуге</label>
+              <input id="catalog-search-input" class="catalog-search-input" type="search" placeholder="Например: Дивеево, ипотека, квартира, газ, Ардатов">
+            </div>
+
+            <div class="filter-panel" aria-label="Фильтры каталога">
+              <div class="filter-group">
+                <span class="filter-label">Раздел</span>
+                <div class="filter-chips">
+                  <button class="filter-chip is-active" type="button" data-filter-group="kind" data-filter-value="all">Все</button>
+                  <button class="filter-chip" type="button" data-filter-group="kind" data-filter-value="property">Недвижимость</button>
+                  <button class="filter-chip" type="button" data-filter-group="kind" data-filter-value="service">Услуги</button>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <span class="filter-label">Задача</span>
+                <div class="filter-chips">
+                  <button class="filter-chip is-active" type="button" data-filter-group="goal" data-filter-value="all">Все</button>
+                  <button class="filter-chip" type="button" data-filter-group="goal" data-filter-value="life">Для жизни</button>
+                  <button class="filter-chip" type="button" data-filter-group="goal" data-filter-value="rent">Под аренду</button>
+                  <button class="filter-chip" type="button" data-filter-group="goal" data-filter-value="invest">Инвестиции</button>
+                  <button class="filter-chip" type="button" data-filter-group="goal" data-filter-value="service">Сопровождение</button>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <span class="filter-label">Формат</span>
+                <div class="filter-chips">
+                  <button class="filter-chip is-active" type="button" data-filter-group="type" data-filter-value="all">Все</button>
+                  <button class="filter-chip" type="button" data-filter-group="type" data-filter-value="house">Дом</button>
+                  <button class="filter-chip" type="button" data-filter-group="type" data-filter-value="flat">Квартира</button>
+                  <button class="filter-chip" type="button" data-filter-group="type" data-filter-value="dacha">Дача</button>
+                  <button class="filter-chip" type="button" data-filter-group="type" data-filter-value="service">Услуга</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog-toolbar-foot">
+              <div class="result-pill">Показано позиций: <strong id="results-count">50</strong></div>
+              <div class="result-pill">Недвижимость: <strong id="property-count">27</strong></div>
+              <div class="result-pill">Услуги: <strong id="service-count">23</strong></div>
+              <div class="result-pill">Если нужного варианта нет в списке, можно написать нам и получить подборку или решение под вашу ситуацию</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section-alt" aria-labelledby="entry-points-title">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Сценарии</div>
+            <h2 id="entry-points-title">Этот каталог помогает не только выбрать объект, но и понять, куда идти дальше с документами и сделкой</h2>
+            <p>В этой сфере людям часто нужен не просто дом или квартира, а еще и помощь с ипотекой, оформлением, границами участка, газом, водой или сложной жизненной ситуацией.</p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card scenario-card">
+              <div class="card-num">01</div>
+              <h3>Покупка для жизни</h3>
+              <p>Человек выбирает дом или квартиру и сразу видит, к кому идти за проверкой объекта, оформлением и сопровождением сделки.</p>
+              <div class="tag-list">
+                <span>Дом под семью</span>
+                <span>Постоянное проживание</span>
+              </div>
+            </article>
+
+            <article class="card scenario-card">
+              <div class="card-num">02</div>
+              <h3>Аренда и паломнический поток</h3>
+              <p>Отдельные позиции и услуги под краткосрочное проживание, посуточную аренду и объекты рядом с монастырем.</p>
+              <div class="tag-list">
+                <span>Посуточно</span>
+                <span>Рядом с монастырем</span>
+              </div>
+            </article>
+
+            <article class="card scenario-card">
+              <div class="card-num">03</div>
+              <h3>Сложные ситуации</h3>
+              <p>Каталог сразу показывает, что компания закрывает не только простую продажу, но и ипотеку, маткапитал, газ, воду, межевание и узаконивание.</p>
+              <div class="tag-list">
+                <span>Документы</span>
+                <span>Сопровождение под ключ</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell" id="catalog-results" aria-labelledby="catalog-results-title">
+        <div class="container">
+          <div class="section-head">
+            <div class="section-kicker">Каталог</div>
+            <h2 id="catalog-results-title">Все позиции собраны в одном месте и расположены в понятном порядке</h2>
+            <p>Сейчас здесь собраны 50 позиций. Каталог уже удобно читать: можно быстро перейти к нужному типу недвижимости или сразу выбрать услугу, если вопрос упирается не в поиск объекта, а в оформление и сопровождение.</p>
+          </div>
+
+          <div class="catalog-split">
+            <section class="catalog-group" aria-labelledby="property-results-title">
+              <div class="catalog-group-head">
+                <div>
+                  <div class="section-kicker">Недвижимость</div>
+                  <h3 id="property-results-title">Дома, квартиры и дачи</h3>
+                </div>
+                <div class="group-count">Позиций: <strong id="property-results-count">27</strong></div>
+              </div>
+              <div class="catalog-results-grid" id="property-results-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="catalog-group" aria-labelledby="service-results-title">
+              <div class="catalog-group-head">
+                <div>
+                  <div class="section-kicker">Услуги</div>
+                  <h3 id="service-results-title">Сопровождение, документы и коммуникации</h3>
+                </div>
+                <div class="group-count">Позиций: <strong id="service-results-count">23</strong></div>
+              </div>
+              <div class="catalog-results-grid" id="service-results-grid" aria-live="polite"></div>
+            </section>
+          </div>
+
+          <div class="empty-state" id="empty-state" hidden>
+            <h3>По этим фильтрам сейчас нет подходящих позиций</h3>
+            <p>Измените фильтры или просто напишите нам: подберем объект, услугу или решение под вашу задачу вручную.</p>
+            <a href="https://t.me/yul_ermilova_diveevo" class="btn-primary" target="_blank" rel="noopener noreferrer">Написать нам</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell section-alt" aria-labelledby="catalog-benefits-title">
+        <div class="container">
+          <div class="cta-panel">
+            <div>
+              <div class="section-kicker">Следующий этап</div>
+              <h2 id="catalog-benefits-title">Каталог уже наполнен реальными предложениями и готов к дальнейшему развитию</h2>
+              <p>Следующим шагом сюда можно добавить больше фотографий, отдельные страницы по каждому объекту и более точный подбор по локации, бюджету и цели покупки.</p>
+            </div>
+            <div class="cta-actions">
+              <a href="buy.html" class="btn-primary">Перейти к покупке</a>
+              <a href="sell.html" class="btn-secondary">Перейти к продаже</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+    const burgerLines = burger.querySelectorAll('span');
+
+    function setBurgerState(isOpen) {
+      drawer.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      burgerLines[0].style.transform = isOpen ? 'translateY(7px) rotate(45deg)' : '';
+      burgerLines[1].style.opacity = isOpen ? '0' : '';
+      burgerLines[2].style.transform = isOpen ? 'translateY(-7px) rotate(-45deg)' : '';
+    }
+
+    burger.addEventListener('click', () => {
+      setBurgerState(!drawer.classList.contains('open'));
+    });
+
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setBurgerState(false));
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) {
+        setBurgerState(false);
+      }
+    });
+
+    const catalogItems = [{"id":1,"title":"Дом кирпичный в Ардатове 91 кв.м, 9,5 соток","price":"По запросу","summary":"Продается кирпичный дом 91 м² с гаражом и участком 9,5 соток. Ардатов, ул. Пролетарская. В тихом районе Ардатова продается просторный кирпичный дом (91 м²) с гаражом и благоустроенным садовым участком 9,5 соток. Отличный вариант для постоянного проживания или загородного отдыха.","kind":"property","type":"house","goal":"life","location":"Ардатов"},{"id":2,"title":"Дом от Ардатова 3 мин, с.Поляна, 6 соток","price":"1 800 000 ₽","summary":"Продается уютный, полностью готовый к проживанию деревянный дом на надежном фундаменте. Идеальный вариант для тех, кто хочет жить за городом, но близко к цивилизации. Про дом (крепкий и сухой):","kind":"property","type":"house","goal":"life","location":"Ардатов"},{"id":3,"title":"Квартира 3х комн с участком 10 сот д.Русское Тювеево","price":"3 800 000 ₽","summary":"3-комнатная квартира 80,6 м² + Участок 10,81 соток. д. Русское Тювеево Предлагается к продаже недвижимость в д. Русское Тювеево (ул. Лесная, д.2). Объект представляет собой связку \"Квартира + Земля\", но возможна реализация и каждого пункта отдельно.","kind":"property","type":"flat","goal":"service","location":"Русское Тювеево"},{"id":4,"title":"Дом в Дивеево на Банула, 15 мин пешком до монастыря","price":"10 300 000 ₽","summary":"Дом построен для себя из качественных материалов. Первый блок — о главном:","kind":"property","type":"house","goal":"life","location":"Дивеево"},{"id":5,"title":"Дом, дача СНТ МОТОР от Дивеево 5 мин езды","price":"1 650 000 ₽","summary":"Продается дачный дом с возможностью проживания круглый год (отапливается первый этаж). Расположение: восточная сторона, тихое, спокойное место без шума трасс. Природа: в 2 минутах ходьбы — лес (полно грибов и ягод). На соседнем участке — пруд, где ловится рыба (карась, окунь). Идеально для семейного отдыха, рыбалки и тишины.","kind":"property","type":"dacha","goal":"life","location":"Дивеево"},{"id":6,"title":"Дом в Осиновке гостевой и для проживания","price":"7 300 000 ₽","summary":"Деревня Осиновка. Тихое, экологичное место. Транспортная доступность: 5 минут езды до села Дивеево.","kind":"property","type":"house","goal":"rent","location":"Осиновка"},{"id":7,"title":"Дом в Дивеево с печкой на Ватрунина, 15 мин пешком до монастыря","price":"5 500 000 ₽","summary":"Новый дом у Дивеевского монастыря с видом на святыню. Осталось немного доделать! Продается дом в экологически чистом районе, в пешей доступности от Свято-Троицкого Серафимо-Дивеевского монастыря (всего 15 минут ходьбы). Отличное место для жизни или гостевого домика.","kind":"property","type":"house","goal":"rent","location":"Дивеево"},{"id":8,"title":"Квартира в Дивеево, до монастыря 10 мин пешком","price":"7 000 000 ₽","summary":"Свой таунхаус с мангалом в двух шагах от Монастыря. Это не просто квартира, а настоящий двухуровневый таунхаус с отдельным входом.","kind":"property","type":"flat","goal":"life","location":"Дивеево"},{"id":9,"title":"Дом в Ардатове","price":"2 100 000 ₽","summary":"Продажа дома 50 м² с газом и водой. Уютный деревянный дом с полным набором коммуникаций в экологически чистом районе Ардатова.","kind":"property","type":"house","goal":"life","location":"Ардатов"},{"id":10,"title":"Дом в Дивеево в 10мин от монастыря","price":"15 000 000 ₽","summary":"Объект в сильной локации рядом с монастырем. Подходит как для проживания, так и для вложения в недвижимость в Дивеево.","kind":"property","type":"house","goal":"invest","location":"Дивеево"},{"id":11,"title":"Дом Дивеево","price":"6 300 000 ₽","summary":"Уютная квартира в двухквартирном одноэтажном доме в Дивеево. Пять минут пешком до монастыря, участок 11 соток и капитальный гараж.","kind":"property","type":"house","goal":"rent","location":"Дивеево"},{"id":12,"title":"Квартира Дивеево","price":"8 800 000 ₽","summary":"Уютная 2-комнатная квартира в новом фонде. Пешком до монастыря около 5 минут, подходит для жизни и посуточного формата.","kind":"property","type":"flat","goal":"life","location":"Дивеево"},{"id":13,"title":"Квартира рядом с монастырем Матросова 3","price":"4 700 000 ₽","summary":"1-комнатная квартира 26,3 м² рядом с Дивеевским монастырем. Вариант для тех, кому важна близость к центру паломнического потока.","kind":"property","type":"flat","goal":"rent","location":"Дивеево"},{"id":14,"title":"Дом в селе, газ, вода, свет,11 соток, рядом Дивеево","price":"8 800 000 ₽","summary":"Новый двухэтажный дом 190 м² в Маевке, рядом с Дивеево. Сильный вариант под семью или под сценарий дальнейшего роста локации.","kind":"property","type":"house","goal":"life","location":"Маевка"},{"id":15,"title":"Дом Суворово 39кв.м , 28 соток, от Дивеево 20мин на машине","price":"3 300 000 ₽","summary":"Теплый жилой дом в селе Суворово с большим участком 28 соток. Подходит для семьи, дачи и спокойной загородной жизни.","kind":"property","type":"house","goal":"life","location":"Суворово"},{"id":16,"title":"Квартира 1 комн, 31,8кв.м Сатис, 17км от Дивеево","price":"2 300 000 ₽","summary":"Светлая квартира 31,8 м² в поселке на берегу реки Сатис. Подходит для спокойной жизни и как доступный вариант рядом с Дивеево.","kind":"property","type":"flat","goal":"life","location":"Сатис"},{"id":17,"title":"Подбор жилья под паломническую поездку","price":"3 000 ₽","summary":"Подбор проживания в Дивеево под конкретный запрос: квартира, комната, гостевой дом или частный сектор с честным разбором до приезда.","kind":"service","type":"service","goal":"rent","location":"Дивеево"},{"id":18,"title":"Пошаговая инструкция по действиям с недвижимостью, напишем алгоритм под вашу ситуацию","price":"5 000 ₽","summary":"Четкий алгоритм действий по вашей ситуации с недвижимостью без воды: что делать, в каком порядке и с какими документами.","kind":"service","type":"service","goal":"service","location":""},{"id":19,"title":"Сделки с материнским капиталом, помощь в работе с домклик, выделение долей, одобрение сфр, ипотека","price":"40 000 ₽","summary":"Сопровождение сделок с маткапиталом, ипотекой, Домклик и выделением долей детям. Подходит для сложных семейных сценариев.","kind":"service","type":"service","goal":"service","location":""},{"id":20,"title":"Оформление самовольных построек, легализация домов и объектов под ключ, без сноса и штрафов","price":"50 000 ₽","summary":"Легализация домов, гаражей, бань, хозблоков и других построек без документов. Работа под ключ от анализа до регистрации.","kind":"service","type":"service","goal":"service","location":""},{"id":21,"title":"Газификация дома под ключ | Оформление по доверенности во всех инстанциях | Проведение газа до котла","price":"40 000 ₽","summary":"Полное сопровождение газификации дома: документы, проект, инстанции и доведение вопроса до запуска газа.","kind":"service","type":"service","goal":"service","location":""},{"id":22,"title":"Подбор недвижимости для проживания и инвестиций | Куплю квартиру, дом, коммерцию под ваш запрос","price":"30 000 ₽","summary":"Подбор недвижимости под жизнь, аренду, инвестиции и коммерческий сценарий. Актуально, когда нужен не один объект, а внятная стратегия выбора.","kind":"service","type":"service","goal":"invest","location":""},{"id":23,"title":"Оформление технического плана дома по доверенности","price":"10 000 ₽","summary":"Оформление технического плана дома по доверенности без необходимости самостоятельно разбираться в документах и инженерах.","kind":"service","type":"service","goal":"service","location":""},{"id":24,"title":"Ипотечный брокер | Сопровождение сделок с ипотекой под ключ | Без предоплаты — оплата только после одобрения","price":"50 000 ₽","summary":"Ипотечное сопровождение под ключ, включая сложные случаи. Оплата только после одобрения банка.","kind":"service","type":"service","goal":"service","location":""},{"id":25,"title":"Подключение воды к дому под ключ (оформление во всех инстанциях по доверенности, проведение коммуникаций)","price":"20 000 ₽","summary":"Вода под ключ: оформление во всех инстанциях, проектирование, согласование и проведение коммуникаций без лишней бюрократии для клиента.","kind":"service","type":"service","goal":"service","location":""},{"id":26,"title":"Банкротство физических лиц: консультация юриста. Избавим от кредитов, микрозаймов, долгов ЖКХ и налогов. Легально и без последствий.","price":"1 ₽","summary":"Юридическая консультация по банкротству физлиц для тех, кто ищет понятный законный выход из долговой нагрузки.","kind":"service","type":"service","goal":"service","location":""},{"id":27,"title":"Выкуп земли у администрации через торги | Земельные участки в собственность или аренду под ключ","price":"25 000 ₽","summary":"Помощь с выкупом земли у администрации через торги: поиск участка, подача, сопровождение и оформление права.","kind":"service","type":"service","goal":"invest","location":""},{"id":28,"title":"Услуга по подключению коммуникаций","price":"10 000 ₽","summary":"Сопровождение вопросов по подключению газа, электричества и воды к дому в удобном формате без хаоса по инстанциям.","kind":"service","type":"service","goal":"service","location":""},{"id":29,"title":"Услуги по подключению коммуникаций","price":"10 000 ₽","summary":"Комплексные услуги по подключению коммуникаций к дому: газ, электричество и вода под сопровождением специалиста.","kind":"service","type":"service","goal":"service","location":""},{"id":30,"title":"Жилье посуточно Дивеево, дом, квартира, комната, гостиница","price":"4 000 ₽","summary":"Подбор жилья в Дивеево на сутки или несколько дней: квартира, дом, комната или гостиница под запрос паломника или туриста.","kind":"property","type":"flat","goal":"rent","location":"Дивеево"},{"id":31,"title":"Квартира в Дивеево, до монастыря 15 мин пешком","price":"5 900 000 ₽","summary":"Светлая квартира в тихом районе Дивеево, теплая и удобная для постоянного проживания. Пешком до монастыря около 15 минут.","kind":"property","type":"flat","goal":"life","location":"Дивеево"},{"id":32,"title":"Дом, квартира 3 комнаты, гараж, 2 сотки, в 15 минутах езды от Дивеево","price":"3 300 000 ₽","summary":"Просторная трехкомнатная квартира в добротном кирпичном доме с гаражом и небольшим участком. Формат для тех, кто хочет автономию без высокой цены.","kind":"property","type":"flat","goal":"life","location":"Дивеево"},{"id":33,"title":"Дом в деревне Трудовое, 10 минут от Дивеево, 7 соток","price":"1 250 000 ₽","summary":"Небольшой деревенский дом на участке рядом с Дивеево. Подходит как доступный стартовый вариант или дача.","kind":"property","type":"house","goal":"life","location":"Трудовое"},{"id":34,"title":"Дом в селе, газ, вода, свет,11 соток, рядом Дивеево","price":"400 000 ₽","summary":"Дом и земельный участок в селе Надежино на реке Иржа. Очень бюджетный вариант под дачу или базовый сценарий проживания.","kind":"property","type":"house","goal":"life","location":"Рядом с Дивеево"},{"id":35,"title":"Дача в 10 мин от Дивеево СНТ Мотор","price":"500 000 ₽","summary":"Уютный дачный дом в СНТ рядом с монастырем. Решение для тихого отдыха, сада и недорогой базы рядом с Дивеево.","kind":"property","type":"dacha","goal":"rent","location":"Дивеево"},{"id":36,"title":"Дом в Маевке от Дивеево 10 мин езды","price":"1 500 000 ₽","summary":"Дом и земельный участок в Маевке в 10 минутах от Дивеево. Подойдет под дачу или проживание после доработки.","kind":"property","type":"house","goal":"life","location":"Маевка"},{"id":37,"title":"Дом в Конново в 20км от Дивеево, в доме все есть","price":"1 100 000 ₽","summary":"Дом и участок в Конново с базовыми условиями для проживания. Недорогой вариант для спокойной загородной жизни.","kind":"property","type":"house","goal":"life","location":"Конново"},{"id":38,"title":"Дом в Березино, 20 км от Дивеево","price":"800 000 ₽","summary":"Дом и участок в Березино в доступном ценовом сегменте. Подходит для дачи, тихого проживания или покупки с минимальным бюджетом.","kind":"property","type":"house","goal":"life","location":"Березино"},{"id":39,"title":"Новый дом из сруба в Дивеево со всеми коммуникациями","price":"7 500 000 ₽","summary":"Дом из отстоявшегося бревна 2024 года в новом районе Дивеево со всеми базовыми коммуникациями. Подходит для круглогодичного проживания.","kind":"property","type":"house","goal":"life","location":"Дивеево"},{"id":40,"title":"Новый дом в Дивеево, рядом с монастырем, выход на набережную! Альтернатива квартире","price":"9 500 000 ₽","summary":"Новый одноэтажный кирпичный дом рядом с монастырем и набережной. Сильный вариант для жизни или сдачи паломникам.","kind":"property","type":"house","goal":"rent","location":"Дивеево"},{"id":41,"title":"Новый дом в Дивеево, с бетонным подвалом, 11 соток","price":"13 900 000 ₽","summary":"Двухэтажный дом на 11 сотках в Дивеево с отделкой под ключ и хорошим конструктивом. Формат для покупателя, который ищет готовый сильный объект.","kind":"property","type":"house","goal":"invest","location":"Дивеево"},{"id":42,"title":"Почему клиенты выбирают комплексное сопровождение","price":"25 000 ₽","summary":"Позиция про формат комплексного сопровождения, где задача не в подаче бумаг, а в итоговом результате по объекту и сделке.","kind":"service","type":"service","goal":"service","location":""},{"id":43,"title":"Межевание участков: раздел, объединение, уточнение границ","price":"15 000 ₽","summary":"Уточнение границ, раздел и объединение участков, исправление реестровых ошибок и сопровождение процесса до результата.","kind":"service","type":"service","goal":"service","location":""},{"id":44,"title":"Помощь при строительстве дома","price":"15 000 ₽","summary":"Юридическое и техническое сопровождение при строительстве дома: подрядчик, договоры, документы, контроль и ввод в эксплуатацию.","kind":"service","type":"service","goal":"service","location":""},{"id":45,"title":"Легализация самовольных построек","price":"15 000 ₽","summary":"Узаконивание домов, гаражей и хозпостроек, включая сложные случаи, отказы и судебное сопровождение.","kind":"service","type":"service","goal":"service","location":""},{"id":46,"title":"Комплексная работа с земельными участками","price":"15 000 ₽","summary":"Диагностика проблемного участка, устранение ограничений, межевание и повышение ликвидности земли как актива.","kind":"service","type":"service","goal":"invest","location":""},{"id":47,"title":"Ипотека под ключ: подбор, одобрение, сопровождение сделки","price":"25 000 ₽","summary":"Безопасная ипотечная сделка без скрытых рисков: программа, одобрение, проверка объекта и сопровождение расчетов.","kind":"service","type":"service","goal":"service","location":""},{"id":48,"title":"Приведение в порядок документов на недвижимость с нуля","price":"15 000 ₽","summary":"Сбор и восстановление документов на старые дома, участки, наследство и сложные объекты до чистого регистрационного результата.","kind":"service","type":"service","goal":"service","location":""},{"id":49,"title":"Прописка в СНТ. Перевод дачного дома в жилой","price":"15 000 ₽","summary":"Перевод дачного или садового дома в жилой и сопровождение прописки по месту жительства.","kind":"service","type":"service","goal":"service","location":""},{"id":50,"title":"Продажа недвижимости под ключ с подготовкой и сопровождением","price":"25 000 ₽","summary":"Комплексная услуга для собственников: оценка, упаковка, продвижение, переговоры и сопровождение продажи до сделки.","kind":"service","type":"service","goal":"service","location":""}];
+
+    catalogItems[0].price = '8 000 000 ₽';
+    catalogItems[0].summary = 'Кирпичный дом 91 м² с гаражом и участком 9,5 соток на ул. Пролетарской в Ардатове. Планировка: зал, две спальни, кухня, прихожая, ванная, терраса и коридор. Все коммуникации централизованы: газ, электричество и вода. Рядом храм, школы, детсады, ФОК, магазины; 25 км до Дивеево, 50 км до Арзамаса.';
+    catalogItems[3].title = 'Дом в Дивеево на Банула';
+    catalogItems[3].price = '10 300 000 ₽';
+    catalogItems[3].summary = 'Дом 121,1 м² на участке 7 соток в растущем районе Дивеево. Постройка 2024 года, фасад и утепление обновлены в 2025-м. 3 спальни, кухня-столовая с выходом на террасу, теплый пол, скважина 70 м. До монастыря 10–15 минут пешком.';
+    catalogItems[4].title = 'Дом в СНТ Мотор круглогодичное проживание';
+    catalogItems[4].price = '1 650 000 ₽';
+    catalogItems[4].summary = 'Дачный дом с возможностью круглогодичного проживания: отапливается первый этаж. Участок 9 соток, баня, 3 теплицы, хозблок для кур, плодородный чернозем. Рядом лес и пруд с рыбой, до Дивеево около 5 минут.';
+    catalogItems[5].title = 'Дом в Осиновке, от Дивеево 5 мин езды';
+    catalogItems[5].price = '7 300 000 ₽';
+    catalogItems[5].summary = 'Ухоженный участок 10 соток в Осиновке и два добротных строения: основной дом с 2 комнатами, кухней, санузлом и русской печью, плюс капитальный двухуровневый гостевой дом. Подходит для жизни и приема гостей рядом с Дивеево.';
+    catalogItems[6].summary = 'Новый дом в Дивеево с видом на купола монастыря. До монастыря около 15 минут пешком. Дом почти готов: остались финишная отделка и внутренние коммуникации. Есть печь, по границе подведены свет, вода и газ.';
+    catalogItems[7].title = 'Квартира двухуровневая в Дивеево на Полевой';
+    catalogItems[7].price = '7 000 000 ₽';
+    catalogItems[7].summary = 'Двухуровневый таунхаус около 70 м² с отдельным входом, верандой, аккуратным участком и мангальной зоной. На первом этаже большая кухня-гостиная и санузел с душевой, на втором — две спальни. Пешком до монастыря около 10 минут.';
+    catalogItems[8].title = 'Дом деревянный, добротный в Ардатове';
+    catalogItems[8].price = '2 100 000 ₽';
+    catalogItems[8].summary = 'Деревянный дом 50 м² с газом, водой и всеми удобствами внутри на участке 15 соток. Тихая улица, рядом школа №1, детский сад, аптека, супермаркет и МФЦ. Формат для тех, кто хочет спокойную жизнь без отказа от инфраструктуры.';
+    catalogItems[9].title = 'Дом в 10мин от монастыря для готового бизнеса или проживания большой семьи';
+    catalogItems[9].price = '15 000 000 ₽';
+    catalogItems[9].summary = 'Большой дом 300 м² с пристройкой 60 м² на участке 11 соток. Подходит под гостевой дом у монастыря или под большую семью. Центральная вода, газ по границе, асфальт, септик, 6 комнат с балконами и сильный потенциал окупаемости.';
+    catalogItems[10].title = 'Дом с русской печкой в 5мин пешком от монастыря';
+    catalogItems[10].price = '6 300 000 ₽';
+    catalogItems[10].summary = 'Уютный дом в Дивеево в формате двухквартирного одноэтажного дома. 11 соток земли, капитальный гараж, центральные коммуникации, душ и санузел внутри. Главная фишка — русская печь с лежанкой и 5 минут пешком до монастыря.';
+    catalogItems[11].title = 'Квартира 2х комн в 5 мин от монастыря';
+    catalogItems[11].price = '8 800 000 ₽';
+    catalogItems[11].summary = 'Светлая 2-комнатная квартира в новом фонде в 5 минутах пешком от монастыря. Изолированные комнаты, просторная кухня, закрытый двор без машин. Рядом магазины, остановки, аптеки и кафе; подходит для жизни и посуточной аренды.';
+    catalogItems[27].title = 'Подключение газа, техплан и проект под ключ';
+    catalogItems[29].kind = 'service';
+    catalogItems[29].type = 'service';
+
+    const filters = { kind: 'all', goal: 'all', type: 'all', search: '' };
+    const chips = document.querySelectorAll('.filter-chip');
+    const searchInput = document.getElementById('catalog-search-input');
+    const resultCount = document.getElementById('results-count');
+    const propertyCount = document.getElementById('property-count');
+    const serviceCount = document.getElementById('service-count');
+    const propertyResultsCount = document.getElementById('property-results-count');
+    const serviceResultsCount = document.getElementById('service-results-count');
+    const emptyState = document.getElementById('empty-state');
+    const propertyResultsGrid = document.getElementById('property-results-grid');
+    const serviceResultsGrid = document.getElementById('service-results-grid');
+
+    const badgeMap = {
+      property: 'Недвижимость',
+      service: 'Услуга',
+      house: 'Дом',
+      flat: 'Квартира',
+      dacha: 'Дача',
+      serviceType: 'Сопровождение'
+    };
+
+    function getTypeLabel(type) {
+      if (type === 'service') return 'Сопровождение';
+      if (type === 'house') return 'Дом';
+      if (type === 'flat') return 'Квартира';
+      if (type === 'dacha') return 'Дача';
+      return 'Формат';
+    }
+
+    function getGoalLabel(goal) {
+      if (goal === 'life') return 'Для жизни';
+      if (goal === 'rent') return 'Под аренду';
+      if (goal === 'invest') return 'Инвестиции';
+      return 'Сопровождение';
+    }
+
+    function getVisualClass(item) {
+      if (item.kind === 'service') return 'alt-3';
+      if (item.type === 'flat') return 'alt-1';
+      if (item.type === 'dacha') return 'alt-2';
+      return '';
+    }
+
+    function getItemLink(item) {
+      if (item.id === 1) return 'object-ardatov-91.html';
+      if (item.id === 2) return 'object-polyana-house.html';
+      if (item.id === 3) return 'object-russkoe-tyuveevo-flat.html';
+      return 'https://t.me/yul_ermilova_diveevo';
+    }
+
+    function getItemLinkLabel(item) {
+      if (item.id === 1 || item.id === 2 || item.id === 3) return 'Подробнее';
+      return 'Запросить детали';
+    }
+
+    function getItemLinkAttrs(item) {
+      if (item.id === 1 || item.id === 2 || item.id === 3) return '';
+      return ' target="_blank" rel="noopener noreferrer"';
+    }
+
+    function createCardsMarkup(items) {
+      return items.map((item) => {
+        const visualClass = getVisualClass(item);
+        const meta = [
+          item.location || 'Дивеево и район',
+          getGoalLabel(item.goal),
+          getTypeLabel(item.type)
+        ];
+        const itemLink = getItemLink(item);
+        const itemLinkLabel = getItemLinkLabel(item);
+        const itemLinkAttrs = getItemLinkAttrs(item);
+
+        return `
+          <article class="card property-card catalog-card ${item.kind === 'service' ? 'is-service' : ''}">
+            <div class="property-media ${visualClass}">
+              <div class="catalog-card-badges">
+                <span class="badge">${item.kind === 'property' ? 'Объект' : 'Услуга'}</span>
+                <span class="badge">${getTypeLabel(item.type)}</span>
+              </div>
+              <span class="price-chip">${item.price}</span>
+            </div>
+            <div class="property-copy">
+              <h3>${item.title}</h3>
+              <p>${item.summary}</p>
+              <div class="property-meta">
+                ${meta.map((value) => `<span>${value}</span>`).join('')}
+                <span>#${item.id}</span>
+              </div>
+              <div class="catalog-card-actions">
+                <a href="${itemLink}" class="btn-secondary"${itemLinkAttrs}>${itemLinkLabel}</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderCards(items) {
+      const propertyItems = items.filter((item) => item.kind === 'property');
+      const serviceItems = items.filter((item) => item.kind === 'service');
+
+      propertyResultsGrid.innerHTML = createCardsMarkup(propertyItems);
+      serviceResultsGrid.innerHTML = createCardsMarkup(serviceItems);
+      propertyCount.textContent = String(propertyItems.length);
+      serviceCount.textContent = String(serviceItems.length);
+      propertyResultsCount.textContent = String(propertyItems.length);
+      serviceResultsCount.textContent = String(serviceItems.length);
+    }
+
+    function applyFilters() {
+      const filteredItems = catalogItems.filter((item) => {
+        const haystack = `${item.title} ${item.summary} ${item.location}`.toLowerCase();
+        const matchesKind = filters.kind === 'all' || item.kind === filters.kind;
+        const matchesGoal = filters.goal === 'all' || item.goal === filters.goal;
+        const matchesType = filters.type === 'all' || item.type === filters.type;
+        const matchesSearch = !filters.search || haystack.includes(filters.search);
+        return matchesKind && matchesGoal && matchesType && matchesSearch;
+      });
+
+      renderCards(filteredItems);
+      resultCount.textContent = String(filteredItems.length);
+      emptyState.hidden = filteredItems.length !== 0;
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const group = chip.dataset.filterGroup;
+        const value = chip.dataset.filterValue;
+        filters[group] = value;
+
+        chips.forEach((currentChip) => {
+          if (currentChip.dataset.filterGroup === group) {
+            currentChip.classList.toggle('is-active', currentChip === chip);
+          }
+        });
+
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', (event) => {
+      filters.search = event.target.value.trim().toLowerCase();
+      applyFilters();
+    });
+
+    applyFilters();
+  </script>
+</body>
+</html>

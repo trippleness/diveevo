@@ -1,859 +1,2031 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
-  <title>Дивеево Интеграл — Недвижимость и юридическое сопровождение</title>
-  <meta name="description" content="Центр недвижимости в Дивеево. Купля-продажа, документы, земля, ипотека, наследство. Ведём от первого вопроса до готового результата.">
-  <meta property="og:title" content="Дивеево Интеграл — Недвижимость под ключ">
-  <meta property="og:description" content="Покупка, продажа, ипотека, наследство, межевание — решаем любой вопрос с недвижимостью в Дивеево.">
+  <title>Дивеево Интеграл - Недвижимость, сделки и документы в Дивеево</title>
+  <meta name="description" content="Дивеево Интеграл помогает купить, продать и оформить недвижимость в Дивеево. Сделки, документы, газификация, техплан, ипотека и материнский капитал.">
+  <meta property="og:title" content="Дивеево Интеграл - Недвижимость и сопровождение сделок">
+  <meta property="og:description" content="Купить, продать и оформить дом, квартиру или участок в Дивеево. Сопровождение сделок, документы, газ, вода, ипотека и материнский капитал.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
 
     :root {
-      --navy:       #182B46;
-      --navy-mid:   #223459;
-      --gold:       #C49A3A;
-      --gold-light: #E0B84E;
-      --gold-tint:  rgba(196, 154, 58, 0.10);
-      --gold-border:rgba(196, 154, 58, 0.25);
-      --bg:         #F6F4F0;
-      --card:       #FFFFFF;
-      --muted:      #6B7285;
-      --lighter:    #9CA3AF;
-      --blue-tint:  #EEF3FA;
-      --r-sm: 8px;
-      --r-md: 16px;
-      --r-lg: 24px;
+      --bg: #f5f1e8;
+      --bg-soft: #fbf8f2;
+      --paper: #ffffff;
+      --navy: #13253c;
+      --navy-2: #203754;
+      --gold: #c89b43;
+      --gold-soft: rgba(200, 155, 67, 0.14);
+      --line: rgba(19, 37, 60, 0.12);
+      --muted: #657288;
+      --text: #16263e;
+      --shadow: 0 18px 50px rgba(17, 33, 55, 0.08);
+      --radius-sm: 14px;
+      --radius-md: 24px;
+      --radius-lg: 36px;
+      --container: 1240px;
     }
 
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--navy);
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(200, 155, 67, 0.12), transparent 32%),
+        linear-gradient(180deg, #f8f4ec 0%, #f5f1e8 100%);
+      color: var(--text);
+      padding-top: 78px;
       overflow-x: hidden;
-      padding-top: 70px;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ─────────────────────────── NAV ─────────────────────────── */
-    body > nav:not(.drawer) {
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    nav.topbar {
       position: fixed;
       inset: 0 0 auto 0;
-      z-index: 200;
-      height: 70px;
-      padding: 0 48px;
+      z-index: 1000;
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(246, 244, 240, 0.90);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(196, 154, 58, 0.12);
+      padding: 0 32px;
+      background: rgba(248, 244, 236, 0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(19, 37, 60, 0.08);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 11px;
+      gap: 14px;
       text-decoration: none;
+      min-width: 0;
     }
-    .logo-mark {
-      width: 38px; height: 38px;
-      background: var(--navy);
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-mark svg { width: 20px; height: 20px; }
-    .logo-name { font-size: 15px; font-weight: 600; color: var(--navy); letter-spacing: -0.02em; line-height: 1.2; }
-    .logo-sub  { font-size: 11px; color: var(--muted); letter-spacing: 0.01em; }
 
-    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color .2s; }
-    .nav-links a:hover { color: var(--navy); }
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: relative;
+      padding: 2px;
+      background: linear-gradient(180deg, #21406a 0%, #173252 100%);
+      box-shadow: 0 12px 24px rgba(19, 37, 60, 0.12);
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      pointer-events: none;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .logo-title {
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--navy); }
+
+    .nav-contact {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: color .2s ease;
+    }
+
+    .nav-contact:hover,
+    .nav-contact:focus-visible {
+      color: var(--gold);
+    }
+
+    .nav-side {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-btn,
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+      font-weight: 700;
+      cursor: pointer;
+    }
 
     .nav-btn {
-      background: var(--gold);
+      background: linear-gradient(135deg, #d5aa52, #bb8b2d);
       color: #fff;
-      padding: 9px 22px;
-      border-radius: var(--r-sm);
-      font-size: 14px; font-weight: 500;
-      text-decoration: none;
-      transition: background .2s, transform .2s, box-shadow .2s;
-    }
-    .nav-btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(196,154,58,.35);
+      box-shadow: 0 12px 24px rgba(187, 139, 45, 0.24);
     }
 
-    /* burger */
-    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-    .burger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all .28s; }
+    .nav-btn {
+      padding: 12px 22px;
+      font-size: 14px;
+    }
 
-    /* mobile drawer */
+    .btn-primary {
+      background: #13253c;
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(19, 37, 60, 0.18);
+      padding: 16px 28px;
+      font-size: 15px;
+    }
+
+    .btn-secondary {
+      padding: 15px 24px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(19, 37, 60, 0.14);
+      color: var(--navy);
+      font-size: 15px;
+    }
+
+    .nav-btn:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      border-color: rgba(19, 37, 60, 0.22);
+    }
+
+    .burger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .burger span {
+      position: absolute;
+      left: 11px;
+      right: 11px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 999px;
+      transition: .24s ease;
+    }
+
+    .burger span:nth-child(1) { top: 14px; }
+    .burger span:nth-child(2) { top: 21px; }
+    .burger span:nth-child(3) { top: 28px; }
+
     .drawer {
       display: none;
       position: fixed;
-      inset: 70px 0 0 0;
-      z-index: 190;
-      min-height: calc(100svh - 70px);
-      background: var(--bg);
-      padding: 36px 32px 40px;
-      flex-direction: column;
-      gap: 0;
-      transform: translateX(100%);
-      transition: transform .35s cubic-bezier(.4,0,.2,1);
-    }
-    .drawer.open { transform: translateX(0); }
-    .drawer a {
-      font-size: 20px; font-weight: 500; color: var(--navy);
-      text-decoration: none; padding: 14px 0;
-      border-bottom: 1px solid rgba(24,43,70,.08);
-    }
-    .drawer a.drawer-cta {
-      margin-top: 32px;
-      background: var(--navy); color: #fff;
-      border-radius: var(--r-sm); text-align: center;
-      padding: 17px; font-size: 16px; font-weight: 600;
-      border-bottom: 0;
-    }
-
-    /* ─────────────────────────── HERO ─────────────────────────── */
-    .hero {
-      min-height: calc(100svh - 70px);
-      padding-top: 0;
-      display: flex;
-      align-items: stretch;
-      position: relative;
-      overflow: visible;
-    }
-
-    /* ambient glow */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -120px; right: -180px;
-      width: 640px; height: 640px;
-      background: radial-gradient(circle, rgba(196,154,58,.07) 0%, transparent 68%);
-      border-radius: 50%;
+      inset: 78px 16px auto 16px;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(19, 37, 60, 0.08);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      transform: translateY(-12px);
+      opacity: 0;
       pointer-events: none;
+      transition: .24s ease;
+    }
+
+    .drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer a {
+      display: block;
+      padding: 14px 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(19, 37, 60, 0.08);
+    }
+
+    .drawer a:last-child { border-bottom: 0; }
+    .drawer .drawer-cta {
+      margin-top: 14px;
+      text-align: center;
+      border-bottom: 0;
+      padding: 14px 18px;
+      color: #fff;
+      background: var(--navy);
+      border-radius: 999px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      margin-top: -78px;
+      padding-top: 78px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -140px;
+      top: -120px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 155, 67, 0.22), transparent 66%);
+      pointer-events: none;
+    }
+
+    .container,
+    .hero-wrap {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
     }
 
     .hero-wrap {
-      max-width: 1240px;
-      margin: 0 auto;
-      width: 100%;
-      min-height: calc(100svh - 70px);
-      padding: 0 48px;
       display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 48px;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+      gap: 44px;
       align-items: center;
-      padding-top: 24px;
-      padding-bottom: 24px;
+      min-height: 100%;
+      padding: 24px 0 28px;
     }
 
-    /* ── LEFT ── */
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--gold-tint);
-      border: 1px solid var(--gold-border);
-      color: #8A6820;
-      padding: 5px 14px 5px 10px;
-      border-radius: 100px;
-      font-size: 11.5px; font-weight: 500;
-      letter-spacing: .05em; text-transform: uppercase;
-      margin-bottom: 24px;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      border: 1px solid rgba(200, 155, 67, 0.22);
+      font-size: 12px;
+      font-weight: 700;
+      color: #7a5a1f;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
+
     .eyebrow-dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
+      background: var(--gold);
+      display: block;
+    }
+
+    h1, h2 {
+      margin: 0;
+      letter-spacing: -0.04em;
+      color: var(--navy);
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 3.2vw, 46px);
-      font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -.025em;
-      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(44px, 5vw, 62px);
+      line-height: 0.92;
       margin-bottom: 16px;
+      max-width: 700px;
     }
-    .underlined {
-      position: relative;
-      display: inline;
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100%;
     }
-    .underlined::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0; right: 0;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 2px;
+
+    .hero-accent {
+      display: inline-block;
+      color: #9f7428;
+      letter-spacing: -0.03em;
     }
 
     .lead {
-      font-size: 15.5px;
-      line-height: 1.56;
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.62;
       color: var(--muted);
-      margin-bottom: 24px;
-      max-width: 560px;
+      max-width: 610px;
     }
 
-    /* chips */
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-    .chip {
-      background: var(--blue-tint);
-      color: var(--navy);
-      padding: 5px 13px;
-      border-radius: 100px;
-      font-size: 12.5px;
+    .chips,
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* CTAs */
-    .ctas { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
-    .btn-dark {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--navy); color: #fff;
-      padding: 15px 30px;
-      border-radius: var(--r-sm);
-      font-size: 15px; font-weight: 500;
-      text-decoration: none;
-      transition: background .22s, transform .22s, box-shadow .22s;
+    .chips {
+      gap: 12px 22px;
+      margin: 18px 0 24px;
+      max-width: 650px;
     }
-    .btn-dark:hover {
-      background: var(--navy-mid);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(24,43,70,.22);
-    }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: transparent; color: var(--navy);
-      padding: 15px 22px;
-      border-radius: var(--r-sm);
-      font-size: 15px; font-weight: 500;
-      text-decoration: none;
-      border: 1px solid rgba(24,43,70,.2);
-      transition: border-color .2s, background .2s;
-    }
-    .btn-ghost:hover { border-color: var(--navy); background: rgba(24,43,70,.04); }
 
-    /* trust bar */
-    .trust {
-      display: flex; align-items: center; gap: 20px;
+    .chip,
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .hero-trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 700px;
+      margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid rgba(24,43,70,.09);
+      border-top: 1px solid rgba(19, 37, 60, 0.08);
     }
-    .trust-item { display: flex; align-items: center; gap: 9px; }
-    .trust-icon {
-      width: 34px; height: 34px;
-      background: var(--gold-tint);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .trust-val { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.2; }
-    .trust-lbl { font-size: 11px; color: var(--muted); }
-    .trust-sep { width: 1px; height: 30px; background: rgba(24,43,70,.11); }
 
-    /* ── RIGHT ── */
+    .hero-trust-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .hero-trust-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(200, 155, 67, 0.12);
+      color: #b6862c;
+    }
+
+    .hero-trust-value {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .hero-trust-label {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
     .hero-right {
       position: relative;
-      padding: 20px 24px 132px 0;
-      transform: scale(1.08);
-      transform-origin: center right;
+      display: grid;
+      justify-items: end;
+      align-self: stretch;
+      padding: 18px 0 44px 52px;
     }
 
-    /* decorative ring */
-    .ring {
-      position: absolute;
-      top: -10px; left: -30px;
-      width: 140px; height: 140px;
-      border: 2px solid rgba(196,154,58,.15);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    /* dot grid */
+    .ring,
     .dots {
       position: absolute;
-      bottom: -10px; right: 5px;
-      width: 108px; height: 108px;
-      background-image: radial-gradient(circle, rgba(196,154,58,.28) 1.5px, transparent 1.5px);
-      background-size: 15px 15px;
       pointer-events: none;
     }
 
-    /* main card */
+    .ring {
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 155, 67, 0.18);
+      top: -8px;
+      left: 12px;
+    }
+
+    .dots {
+      width: 140px;
+      height: 140px;
+      background-image: radial-gradient(rgba(19, 37, 60, 0.18) 1px, transparent 1px);
+      background-size: 14px 14px;
+      left: 0;
+      bottom: 16px;
+      opacity: .55;
+    }
+
     .card-main {
-      background: var(--card);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(24,43,70,.13), 0 4px 14px rgba(24,43,70,.06);
       position: relative;
+      z-index: 2;
+      width: min(100%, 540px);
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--paper);
+      border: 1px solid rgba(19, 37, 60, 0.08);
+      box-shadow: var(--shadow);
     }
 
     .card-img {
-      height: 248px;
-      background:
-        linear-gradient(140deg, rgba(24,43,70,.48) 0%, rgba(34,52,89,.38) 45%, rgba(30,61,98,.28) 75%, rgba(22,36,57,.52) 100%),
-        url('XXL.jpg');
-      background-size: cover;
-      background-position: center;
       position: relative;
-      overflow: hidden;
-    }
-    /* SVG-style monastery silhouette via CSS */
-    .card-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
+      min-height: 300px;
       background:
-        radial-gradient(ellipse 28px 48px at 28% 68%, rgba(196,154,58,.28) 0%, transparent 100%),
-        radial-gradient(ellipse 22px 38px at 50% 62%, rgba(196,154,58,.22) 0%, transparent 100%),
-        radial-gradient(ellipse 16px 28px at 72% 72%, rgba(196,154,58,.18) 0%, transparent 100%),
-        linear-gradient(to top, rgba(24,43,70,.85) 0%, transparent 55%);
+        linear-gradient(180deg, rgba(8, 15, 25, 0.08), rgba(8, 15, 25, 0.62)),
+        url("XXL.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #fff;
     }
 
     .card-badge {
-      position: absolute; top: 14px; left: 14px; z-index: 2;
-      background: var(--gold); color: #fff;
-      padding: 4px 11px; border-radius: 100px;
-      font-size: 11px; font-weight: 500;
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      background: rgba(213, 170, 82, 0.92);
+      color: #fff;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
     }
 
-    .card-img-text {
-      position: absolute; bottom: 18px; left: 18px; right: 18px; z-index: 2;
-    }
     .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; font-weight: 600; color: #fff;
-      line-height: 1.3; margin-bottom: 4px;
-    }
-    .card-price {
-      font-size: 22px; font-weight: 700;
-      color: #E8C96B;
-      -webkit-text-fill-color: #E8C96B;
-      text-decoration: none;
-    }
-    .card-price a {
-      color: inherit;
-      -webkit-text-fill-color: inherit;
-      text-decoration: none;
-      pointer-events: none;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 2.3vw, 34px);
+      line-height: 0.98;
+      margin-bottom: 8px;
+      max-width: 280px;
     }
 
-    .card-body { padding: 20px 22px 30px; }
+    .card-price {
+      font-size: 17px;
+      font-weight: 800;
+      color: #f2cc73;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
 
     .card-loc {
-      display: flex; align-items: center; gap: 5px;
-      font-size: 12.5px; color: var(--muted);
-      margin-bottom: 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 12px;
     }
 
     .card-feats {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 9px; margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
     }
+
     .feat {
-      display: flex; align-items: center; gap: 7px;
-      font-size: 12.5px; color: var(--muted);
-    }
-    .feat-ico {
-      width: 26px; height: 26px;
-      background: var(--blue-tint);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      padding: 10px 11px;
+      border-radius: 14px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(19, 37, 60, 0.06);
+      font-size: 11px;
+      line-height: 1.35;
+      color: var(--navy);
     }
 
-    .card-seal {
-      display: flex; align-items: center; gap: 6px;
-      background: var(--gold-tint);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--r-sm);
-      padding: 9px 13px;
-      font-size: 12px; font-weight: 500; color: #7A5C14;
+    .card-footnote {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(200, 155, 67, 0.08);
+      border: 1px solid rgba(200, 155, 67, 0.12);
+      color: #9d7426;
+      font-size: 11px;
+      font-weight: 700;
     }
 
-    /* floating cards */
-    .float-review {
+    .hero-mini-stat,
+    .hero-mini-review {
       position: absolute;
-      bottom: 0;
-      left: -44px;
-      background: var(--card);
-      border-radius: var(--r-md);
-      padding: 14px 18px;
-      box-shadow: 0 12px 36px rgba(24,43,70,.13);
-      width: 206px;
       z-index: 3;
-      animation: floatY 5s ease-in-out infinite;
-    }
-    .float-stars { font-size: 13px; color: var(--gold); margin-bottom: 4px; }
-    .float-text  { font-size: 12px; font-weight: 500; color: var(--navy); line-height: 1.4; margin-bottom: 5px; }
-    .float-auth  { font-size: 11px; color: var(--muted); }
-
-    .float-stat {
-      position: absolute;
-      top: 26px; right: -44px;
-      background: var(--navy); color: #fff;
-      border-radius: var(--r-md);
-      padding: 16px 18px;
-      box-shadow: 0 12px 36px rgba(24,43,70,.28);
-      text-align: center;
-      animation: floatY 5s 2.5s ease-in-out infinite;
-    }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px; font-weight: 700;
-      color: #E8C96B; line-height: 1;
-      margin-bottom: 4px;
-    }
-    .stat-lbl { font-size: 11px; color: rgba(255,255,255,.58); max-width: 76px; line-height: 1.3; }
-
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-8px); }
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
 
-    /* scroll hint */
-    .scroll-hint {
-      position: absolute;
-      bottom: 28px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: var(--muted); font-size: 11.5px; letter-spacing: .03em;
-    }
-    .scroll-line {
-      width: 1px; height: 36px;
-      background: linear-gradient(to bottom, rgba(24,43,70,.3), transparent);
-      animation: scrollBlink 2.2s ease-in-out infinite;
-    }
-    @keyframes scrollBlink {
-      0%, 100% { opacity: .25; }
-      50%       { opacity: 1; }
+    .hero-mini-stat {
+      top: 32px;
+      right: -22px;
+      width: 138px;
+      padding: 18px 16px;
+      background: #1b3150;
+      color: #fff;
     }
 
-    /* ── entrance animations ── */
-    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes scaleIn  { from { opacity:0; transform:scale(.93);       } to { opacity:1; transform:scale(1);    } }
-
-    .eyebrow { animation: fadeUp .55s .05s both; }
-    h1       { animation: fadeUp .55s .12s both; }
-    .lead    { animation: fadeUp .55s .19s both; }
-    .chips   { animation: fadeUp .55s .26s both; }
-    .ctas    { animation: fadeUp .55s .33s both; }
-    .trust   { animation: fadeUp .55s .40s both; }
-    .hero-right { animation: scaleIn .7s .18s both; }
-
-    /* ─────────────────────────── RESPONSIVE ─────────────────────────── */
-    @media (max-width: 1060px) {
-      .float-stat   { right: -20px; }
-      .float-review { left: -16px; }
+    .hero-mini-stat strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      margin-bottom: 6px;
+      font-weight: 800;
     }
 
-    @media (max-height: 940px) and (min-width: 881px) {
-      .hero {
-        min-height: calc(100svh - 70px);
-        padding-top: 0;
+    .hero-mini-stat span {
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-mini-review {
+      left: 6px;
+      bottom: -28px;
+      width: 176px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(19, 37, 60, 0.08);
+    }
+
+    .hero-mini-stars {
+      color: #c89b43;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .hero-mini-text {
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .hero-mini-author {
+      font-size: 10px;
+      line-height: 1.35;
+      color: var(--muted);
+    }
+
+    .section-shell {
+      padding: 112px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: rgba(255, 255, 255, 0.42);
+      border-top: 1px solid rgba(19, 37, 60, 0.05);
+      border-bottom: 1px solid rgba(19, 37, 60, 0.05);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8d6924;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: rgba(200, 155, 67, 0.7);
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 0.98;
+      margin-bottom: 16px;
+    }
+
+    .section-head p,
+    .panel p,
+    .service-card p,
+    .review-card p,
+    .process-card p,
+    .info-card p,
+    .cta-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .entry-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 100%;
+      padding: 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(19, 37, 60, 0.08);
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .entry-card:hover,
+    .entry-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(200, 155, 67, 0.3);
+      box-shadow: 0 20px 44px rgba(17, 33, 55, 0.1);
+    }
+
+    .entry-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .entry-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--gold-soft);
+      color: #9d7426;
+    }
+
+    .entry-link {
+      color: #9d7426;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .entry-card h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .entry-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .cards-grid,
+    .services-grid,
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .services-grid.four-col {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #reviews .reviews-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card,
+    .review-card,
+    .process-card,
+    .info-card,
+    .panel,
+    .cta-panel {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(19, 37, 60, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card,
+    .review-card,
+    .process-card,
+    .info-card {
+      border-radius: 26px;
+      padding: 28px;
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--gold-soft);
+      color: #7a5a1f;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3,
+    .review-card h3,
+    .process-card h3,
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+    }
+
+    .service-list,
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .service-list span,
+    .tag-list span {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(19, 37, 60, 0.07);
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 18px;
+    }
+
+    .panel {
+      border-radius: 32px;
+      padding: 32px;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .bullet-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--navy);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .bullet-dot {
+      width: 10px;
+      height: 10px;
+      margin-top: 8px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(200, 155, 67, 0.14);
+    }
+
+    .stats-col {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8d6924;
+      margin-bottom: 10px;
+    }
+
+    .info-value {
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+
+    .property-card {
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-media {
+      min-height: 220px;
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      background: linear-gradient(180deg, rgba(17, 31, 48, 0.16), rgba(17, 31, 48, 0.52));
+      color: #fff;
+      position: relative;
+    }
+
+    .property-media.photo-1 {
+      background:
+        linear-gradient(140deg, rgba(24, 43, 70, 0.18), rgba(24, 43, 70, 0.74)),
+        linear-gradient(135deg, #8399b2, #42566f);
+    }
+
+    .property-media.photo-2 {
+      background:
+        linear-gradient(140deg, rgba(24, 43, 70, 0.2), rgba(24, 43, 70, 0.72)),
+        linear-gradient(135deg, #7692b1, #2c425b);
+    }
+
+    .property-media.photo-3 {
+      background:
+        linear-gradient(140deg, rgba(24, 43, 70, 0.16), rgba(24, 43, 70, 0.72)),
+        linear-gradient(135deg, #9da18d, #4e5f50);
+    }
+
+    .property-badge {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .property-price {
+      align-self: flex-end;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(17, 31, 48, 0.58);
+      font-size: 14px;
+      font-weight: 800;
+      backdrop-filter: blur(12px);
+    }
+
+    .property-copy {
+      padding: 24px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 16px;
+    }
+
+    .property-copy h3 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .property-copy p,
+    .property-meta {
+      margin: 0;
+    }
+
+    .property-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .property-meta span {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(19, 37, 60, 0.07);
+    }
+
+    .catalog-card-actions {
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-step {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .review-stars {
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .review-author {
+      margin-top: 18px;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .review-source {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .faq-item h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .cta-panel {
+      border-radius: 34px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, rgba(200, 155, 67, 0.18), transparent 28%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 236, 0.92));
+    }
+
+    .cta-copy {
+      max-width: 720px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .mini-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .site-footer {
+      padding: 42px 0 28px;
+      background:
+        radial-gradient(circle at top right, rgba(200, 155, 67, 0.12), transparent 24%),
+        linear-gradient(180deg, #122235 0%, #0f1d2f 100%);
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(180px, 0.65fr)) minmax(220px, 0.9fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-logo .logo-title {
+      color: #fff;
+    }
+
+    .footer-logo .logo-subtitle,
+    .footer-brand p,
+    .footer-contact a,
+    .footer-bottom {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .footer-brand p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-links,
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-contact a {
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.5;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover,
+    .footer-links a:focus-visible,
+    .footer-contact a:focus-visible {
+      color: #fff;
+    }
+
+    .footer-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      margin-top: 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d5aa52, #bb8b2d);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(187, 139, 45, 0.24);
+      transition: transform .2s ease;
+    }
+
+    .footer-cta:hover,
+    .footer-cta:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1120px) {
+      .hero-wrap,
+      .facts-grid,
+      .cta-panel,
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
-      .hero-wrap {
-        min-height: calc(100svh - 70px);
-        align-items: center;
-        padding-top: 18px;
-        padding-bottom: 18px;
-        grid-template-columns: 1.06fr 0.94fr;
-        gap: 36px;
-      }
-      .eyebrow {
-        margin-bottom: 16px;
-        font-size: 11px;
-      }
-      h1 {
-        font-size: clamp(32px, 2.9vw, 42px);
-        margin-bottom: 14px;
-      }
-      .lead {
-        font-size: 15px;
-        line-height: 1.48;
-        margin-bottom: 18px;
-      }
-      .chips {
-        gap: 7px;
-        margin-bottom: 18px;
-      }
-      .chip {
-        padding: 5px 11px;
-        font-size: 12px;
-      }
-      .ctas {
-        margin-bottom: 18px;
-      }
-      .btn-dark,
-      .btn-ghost {
-        padding-top: 13px;
-        padding-bottom: 13px;
-      }
-      .trust {
-        padding-top: 14px;
-        gap: 16px;
-      }
-      .trust-icon {
-        width: 30px;
-        height: 30px;
-      }
-      .trust-val {
-        font-size: 13px;
-      }
-      .trust-lbl {
-        font-size: 10.5px;
-      }
+
       .hero-right {
-        padding-top: 12px;
-        padding-bottom: 108px;
-        transform: scale(1.04);
+        justify-items: start;
+        padding: 0;
       }
-      .card-img {
-        height: 220px;
+
+      .ring,
+      .hero-mini-stat,
+      .hero-mini-review {
+        position: static;
       }
-      .card-body {
-        padding: 16px 18px 24px;
+
+      .hero-mini-stat,
+      .hero-mini-review {
+        margin-top: 14px;
       }
-      .float-review {
-        bottom: 0;
-        left: -26px;
-      }
-      .scroll-hint {
+
+      .dots {
         display: none;
       }
+
+      .services-grid.four-col,
+      .entry-grid,
+      .cards-grid,
+      .services-grid,
+      .reviews-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
     }
 
-    @media (max-width: 880px) {
-      nav { padding: 0 24px; }
-      .nav-links, .nav-btn { display: none; }
-      .burger { display: flex; }
-      .drawer { display: flex; }
+    @media (max-width: 860px) {
+      body { padding-top: 74px; }
+      nav.topbar {
+        height: 74px;
+        padding: 0 18px;
+      }
+
+      .nav-links,
+      .nav-side { display: none; }
+
+      .burger,
+      .drawer { display: block; }
+
+      .hero-wrap,
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .hero,
+      .hero-wrap {
+        gap: 28px;
+        height: auto;
+        min-height: auto;
+      }
+
+      .hero {
+        min-height: 100svh;
+        margin-top: -74px;
+        padding-top: 74px;
+      }
 
       .hero-wrap {
-        grid-template-columns: 1fr;
-        gap: 52px;
-        padding: 52px 24px 80px;
+        padding: 20px 0 28px;
       }
-      .drawer {
-        padding: 28px 24px 36px;
-      }
-      h1 { font-size: clamp(28px, 7vw, 40px); }
-      .lead { max-width: 100%; }
 
-      .hero-right {
-        padding: 20px 16px 60px;
-        order: 2;
-        transform: none;
+      .hero-trust,
+      .entry-grid,
+      .services-grid.four-col,
+      .cards-grid,
+      .services-grid,
+      .reviews-grid,
+      .process-grid,
+      .card-feats {
+        grid-template-columns: 1fr;
       }
+
+      .section-shell { padding: 84px 0; }
+      .panel,
+      .service-card,
+      .review-card,
+      .process-card,
+      .info-card,
+      .cta-panel { padding: 24px; }
+
+      .site-footer {
+        padding: 34px 0 24px;
+      }
+
       .card-main {
-        max-width: 640px;
-        margin: 0 auto;
+        border-radius: 24px;
       }
-      .float-stat {
-        right: 12px;
-        top: 14px;
-      }
-      .float-review {
-        left: 16px;
-        bottom: -18px;
-      }
-      .dots {
-        right: 24px;
-        bottom: -18px;
+
+      .card-img { min-height: 360px; }
+      .card-title { font-size: 30px; }
+      .hero-mini-stat {
+        width: 100%;
+        max-width: 220px;
       }
     }
 
     @media (max-width: 560px) {
-      .ctas { flex-direction: column; align-items: flex-start; }
-      .btn-dark,
-      .btn-ghost {
+      h1 { font-size: clamp(36px, 12vw, 52px); }
+      h2 { font-size: clamp(30px, 10vw, 40px); }
+      .lead { font-size: 15px; }
+      .ctas,
+      .cta-actions {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .nav-btn,
+      .drawer .drawer-cta {
         width: 100%;
-        justify-content: center;
-      }
-      .trust { flex-wrap: wrap; gap: 14px; }
-      .trust-sep { display: none; }
-      .chips { gap: 6px; }
-      .drawer {
-        padding: 22px 18px 28px;
-      }
-      .drawer a {
-        font-size: 18px;
-        padding: 12px 0;
-      }
-      .hero-wrap {
-        padding: 36px 18px 72px;
-        gap: 40px;
-      }
-      .hero-right {
-        padding: 16px 0 70px;
-      }
-      .card-img {
-        height: 210px;
-      }
-      .card-body {
-        padding: 16px 16px 22px;
-      }
-      .card-feats {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-      .float-stat {
-        right: 6px;
-        top: 10px;
-        padding: 12px 14px;
-      }
-      .float-review {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        max-width: 280px;
-        margin: 14px auto 0;
-      }
-      .dots,
-      .ring,
-      .scroll-hint {
-        display: none;
       }
     }
   </style>
 </head>
 <body>
+  <nav class="topbar">
+    <a href="#" class="logo" aria-label="Дивеево Интеграл - на главную">
+      <div class="logo-mark" aria-hidden="true">
+        <img src="landing_logo_x2.jpg" alt="">
+      </div>
+      <div>
+        <div class="logo-title">Дивеево Интеграл</div>
+        <div class="logo-subtitle">Центр недвижимости и сопровождения</div>
+      </div>
+    </a>
 
-<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
-<nav>
-  <a href="#" class="logo" aria-label="Дивеево Интеграл — на главную">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
+    <ul class="nav-links" role="list">
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="services-documents.html">Услуги</a></li>
+      <li><a href="buy.html">Купить</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+
+    <div class="nav-side">
+      <a href="tel:+79601711320" class="nav-contact">+7 (960) 171-13-20</a>
+      <a href="https://t.me/yul_ermilova_diveevo" class="nav-btn" target="_blank" rel="noopener noreferrer">Написать нам</a>
     </div>
-    <div>
-      <div class="logo-name">Дивеево Интеграл</div>
-      <div class="logo-sub">Центр недвижимости</div>
-    </div>
-  </a>
 
-  <ul class="nav-links" role="list">
-    <li><a href="#">Объекты</a></li>
-    <li><a href="#">Услуги</a></li>
-    <li><a href="#">Ипотека</a></li>
-    <li><a href="#">Отзывы</a></li>
-    <li><a href="#">Контакты</a></li>
-  </ul>
+    <button class="burger" id="burger" onclick="toggleDrawer()" aria-label="Меню" aria-expanded="false" type="button">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-  <a href="https://t.me/yul_ermilova_diveevo" class="nav-btn" target="_blank" rel="noopener noreferrer">Позвонить</a>
+  <nav class="drawer" id="drawer" aria-label="Мобильное меню">
+    <a href="catalog.html" onclick="toggleDrawer()">Каталог</a>
+    <a href="services-documents.html" onclick="toggleDrawer()">Услуги</a>
+    <a href="buy.html" onclick="toggleDrawer()">Купить</a>
+    <a href="#reviews" onclick="toggleDrawer()">Отзывы</a>
+    <a href="#contacts" onclick="toggleDrawer()">Контакты</a>
+    <a href="tel:+79601711320" onclick="toggleDrawer()">+7 (960) 171-13-20</a>
+    <a href="https://t.me/yul_ermilova_diveevo" class="drawer-cta" target="_blank" rel="noopener noreferrer" onclick="toggleDrawer()">Написать сейчас</a>
+  </nav>
 
-  <button class="burger" id="burger" onclick="toggleDrawer()" aria-label="Меню" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Дивеево · Нижегородская область
+        </div>
 
-<!-- mobile drawer -->
-<nav class="drawer" id="drawer" role="navigation" aria-label="Мобильное меню">
-  <a href="#" onclick="toggleDrawer()">Объекты</a>
-  <a href="#" onclick="toggleDrawer()">Услуги</a>
-  <a href="#" onclick="toggleDrawer()">Ипотека</a>
-  <a href="#" onclick="toggleDrawer()">Отзывы</a>
-  <a href="#" onclick="toggleDrawer()">Контакты</a>
-  <a href="https://t.me/yul_ermilova_diveevo" class="drawer-cta" target="_blank" rel="noopener noreferrer" onclick="toggleDrawer()">Позвонить сейчас</a>
-</nav>
+        <h1 id="hero-h1">
+          Недвижимость в Дивеево<br>
+          <span class="hero-accent">без риска и хлопот</span><br>
+          от первого вопроса<br>
+          до ключей в руке
+        </h1>
 
-<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-<section class="hero" aria-labelledby="hero-h1">
-  <div class="hero-wrap">
+        <p class="lead">
+          Покупка, продажа, документы, земля и ипотека в одном месте. Берёмся за сложные
+          ситуации: наследство, маткапитал, узаконивание, удалённые сделки и работу по доверенности.
+        </p>
 
-    <!-- ── LEFT: COPY ── -->
-    <div class="hero-left">
-      <div class="eyebrow" aria-label="Местоположение">
-        <span class="eyebrow-dot" aria-hidden="true"></span>
-        Дивеево · Нижегородская область
+        <div class="chips" aria-label="Направления">
+          <span class="chip">Ипотека и маткапитал</span>
+          <span class="chip">Наследство</span>
+          <span class="chip">Межевание участков</span>
+          <span class="chip">Сделки под ключ</span>
+          <span class="chip">Работа по доверенности</span>
+          <span class="chip">Газификация</span>
+        </div>
+
+        <div class="ctas">
+          <a href="https://t.me/yul_ermilova_diveevo" class="btn-primary" target="_blank" rel="noopener noreferrer">Получить консультацию</a>
+          <a href="catalog.html" class="btn-secondary">Смотреть объекты →</a>
+        </div>
+
+        <div class="hero-trust" aria-label="Показатели доверия">
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-trust-value">4.5 / 5</div>
+              <div class="hero-trust-label">Яндекс Карты</div>
+            </div>
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-trust-value">9 отзывов</div>
+              <div class="hero-trust-label">Реальные клиенты</div>
+            </div>
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-trust-value">Проверяем</div>
+              <div class="hero-trust-label">Юридическую чистоту</div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <h1 id="hero-h1">
-        Недвижимость в Дивеево<br>
-        — <span class="underlined">без риска и хлопот</span><br>
-        от первого вопроса<br>до ключей в руке
-      </h1>
+      <div class="hero-right">
+        <div class="ring" aria-hidden="true"></div>
 
-      <p class="lead">
-        Покупка, продажа, документы, земля и ипотека в одном месте. Берёмся за сложные ситуации: наследство, маткапитал, узаконивание, удалённые сделки и работа по доверенности.
-      </p>
+        <div class="card-main" role="article" aria-label="Дом в Дивеево в 10 минутах от монастыря">
+          <div class="card-img">
+            <span class="card-badge">Готовый бизнес</span>
+            <div>
+              <div class="card-title">Дом в Дивеево,<br>10 мин от монастыря</div>
+              <div class="card-price">15 000 000 ₽</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-loc">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Дивеево · 10-15 минут до монастыря</span>
+            </div>
 
-      <div class="chips" role="list" aria-label="Направления работы">
-        <span class="chip" role="listitem">Ипотека и маткапитал</span>
-        <span class="chip" role="listitem">Наследство</span>
-        <span class="chip" role="listitem">Межевание участков</span>
-        <span class="chip" role="listitem">Сделки под ключ</span>
-        <span class="chip" role="listitem">Работа по доверенности</span>
-        <span class="chip" role="listitem">Газификация</span>
+            <div class="card-feats">
+              <div class="feat">300 м² · 6 комнат</div>
+              <div class="feat">11 соток · асфальт</div>
+              <div class="feat">Газ у границы · центр. вода</div>
+              <div class="feat">Пристройка 60 м² · септик</div>
+            </div>
+
+            <div class="card-footnote">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Подойдёт под гостевой дом или большую семью
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-mini-stat" aria-hidden="true">
+          <strong>10+</strong>
+          <span>видов услуг в одном месте</span>
+        </div>
+
+        <div class="hero-mini-review" aria-hidden="true">
+          <div class="hero-mini-stars">★★★★★</div>
+          <div class="hero-mini-text">«Продали дом с ипотекой, хотя были сложности с документами»</div>
+          <div class="hero-mini-author">Фрустова Е. — Яндекс Карты</div>
+        </div>
+
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-alt" id="entry-points" aria-labelledby="entry-points-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Быстрый Старт</div>
+        <h2 id="entry-points-title">Выберите, что вам нужно сейчас</h2>
+        <p>Если вы на сайте впервые, не нужно искать нужный раздел в верхнем меню. Ниже собраны прямые переходы в каталог и основные разделы по вашим задачам.</p>
       </div>
 
-      <div class="ctas">
-        <a href="https://t.me/yul_ermilova_diveevo" class="btn-dark" target="_blank" rel="noopener noreferrer" aria-label="Открыть Telegram и получить консультацию">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.5 2 2 0 0 1 3.59 2.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Получить консультацию
+      <div class="entry-grid">
+        <a href="catalog.html" class="entry-card">
+          <div class="entry-top">
+            <div class="entry-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="M7 8h10"></path>
+                <path d="M7 12h10"></path>
+                <path d="M7 16h6"></path>
+              </svg>
+            </div>
+            <span class="entry-link">Открыть →</span>
+          </div>
+          <h3>Каталог объектов</h3>
+          <p>Посмотреть дома, квартиры, участки и услуги в одном списке с быстрым переходом в нужную позицию.</p>
         </a>
-        <a href="#objects" class="btn-ghost">
-          Смотреть объекты
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+
+        <a href="buy.html" class="entry-card">
+          <div class="entry-top">
+            <div class="entry-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-8 9 8"></path>
+                <path d="M5 10v10h14V10"></path>
+              </svg>
+            </div>
+            <span class="entry-link">Перейти →</span>
+          </div>
+          <h3>Купить недвижимость</h3>
+          <p>Подберём дом, квартиру или участок под вашу задачу, проверим объект и доведём до безопасной сделки.</p>
+        </a>
+
+        <a href="sell.html" class="entry-card">
+          <div class="entry-top">
+            <div class="entry-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1v22"></path>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14.5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span class="entry-link">Перейти →</span>
+          </div>
+          <h3>Продать объект</h3>
+          <p>Подготовим объект, поможем с подачей, переговорами, документами и безопасным выходом на сделку.</p>
+        </a>
+
+        <a href="services-documents.html" class="entry-card">
+          <div class="entry-top">
+            <div class="entry-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <path d="M14 2v6h6"></path>
+                <path d="M8 13h8"></path>
+                <path d="M8 17h5"></path>
+              </svg>
+            </div>
+            <span class="entry-link">Перейти →</span>
+          </div>
+          <h3>Документы и сделки</h3>
+          <p>Если вопрос в наследстве, СНТ, техплане, ипотеке, долях или сопровождении сделки без рисков.</p>
         </a>
       </div>
+    </div>
+  </section>
 
-      <!-- trust bar -->
-      <div class="trust" role="list" aria-label="Показатели доверия">
-        <div class="trust-item" role="listitem">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <div>
-            <div class="trust-val">4.5 / 5</div>
-            <div class="trust-lbl">Яндекс Карты</div>
+  <section class="section-shell" id="scenarios" aria-labelledby="scenarios-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Сценарии</div>
+        <h2 id="scenarios-title">Почему клиенты обращаются именно к нам</h2>
+        <p>Здесь собраны основные сценарии, с которых обычно начинается работа: поиск объекта, продажа, сложная сделка или наведение порядка в документах.</p>
+      </div>
+      <div class="services-grid four-col">
+        <article class="service-card">
+          <div class="service-icon">01</div>
+          <h3>Дом понравился, но есть сомнения</h3>
+          <p>Проверим документы, ограничения, историю объекта и объясним все риски до покупки.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">02</div>
+          <h3>Нужно продать дороже и без месяцев ожидания</h3>
+          <p>Подготовим объект, усилим подачу и приведём реальных покупателей.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">03</div>
+          <h3>Сделка кажется слишком сложной</h3>
+          <p>Наследство, СНТ, ипотека, доли, маткапитал — выстроим понятный план действий.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">04</div>
+          <h3>Покупаете не просто дом, а спокойствие</h3>
+          <p>Смотрим не только цену, но и коммуникации, документы и пригодность объекта для жизни.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-alt" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">О компании</div>
+        <h2 id="about-title">Не просто показываем объекты, а помогаем довести вопрос с недвижимостью до результата</h2>
+        <p>Покупка или продажа недвижимости редко заканчивается на просмотре объявлений. Часто дальше появляются документы, наследство, границы участка, ипотека, маткапитал, коммуникации и юридические нюансы. Мы берём эти задачи на себя и ведём клиента до понятного результата.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="panel">
+          <h3>Почему с нами проще пройти сложный путь</h3>
+          <p>Дивеево Интеграл полезен там, где человеку нужен не просто контакт риелтора, а взрослое сопровождение всей ситуации: от первой оценки до финальных документов, расчетов и ключей.</p>
+          <div class="bullet-list">
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Смотрим не только на цену и фото, а на документы, ограничения, состояние объекта, коммуникации и будущие риски.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Помогаем убрать препятствия к покупке или продаже: наследство, доли, СНТ, неоформленные права, ошибки в документах.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Не оставляем клиента после консультации один на один с проблемой, а ведем по этапам до понятного результата.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Часть задач можно пройти по доверенности, если вы живете в другом городе или не хотите ездить по инстанциям сами.</span></div>
           </div>
         </div>
-        <div class="trust-sep" aria-hidden="true"></div>
-        <div class="trust-item" role="listitem">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="stats-col">
+          <div class="info-card">
+            <div class="info-label">Направление 1</div>
+            <div class="info-value">Недвижимость</div>
+            <p>Подбор, продажа, упаковка объектов и сопровождение сделок для жизни, переезда, аренды и инвестиций.</p>
           </div>
-          <div>
-            <div class="trust-val">9 отзывов</div>
-            <div class="trust-lbl">Реальные клиенты</div>
+          <div class="info-card">
+            <div class="info-label">Направление 2</div>
+            <div class="info-value">Документы</div>
+            <p>Техплан, наследство, СНТ, самострой, межевание, регистрация права и выстраивание юридически чистой сделки.</p>
           </div>
-        </div>
-        <div class="trust-sep" aria-hidden="true"></div>
-        <div class="trust-item" role="listitem">
-          <div class="trust-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <div>
-            <div class="trust-val">Проверяем</div>
-            <div class="trust-lbl">юридическую чистоту</div>
+          <div class="info-card">
+            <div class="info-label">Направление 3</div>
+            <div class="info-value">Коммуникации</div>
+            <p>Газ, вода и сопровождение подключений, когда объект нужно не просто купить, а довести до нормальной эксплуатации.</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ── RIGHT: VISUAL ── -->
-    <div class="hero-right">
-      <div class="ring" aria-hidden="true"></div>
-
-      <!-- main property card -->
-      <div class="card-main" role="article" aria-label="Дом в Дивеево в 10 минут от монастыря">
-        <div class="card-img" aria-hidden="true">
-          <span class="card-badge">Готовый бизнес</span>
-          <div class="card-img-text">
-            <div class="card-title">Дом в Дивеево,<br>10 мин от монастыря</div>
-            <div class="card-price">15 000 000 ₽</div>
-          </div>
-        </div>
-
-        <div class="card-body">
-          <div class="card-loc">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>Дивеево • 10-15 минут до монастыря</span>
-          </div>
-
-          <div class="card-feats">
-            <div class="feat">
-              <div class="feat-ico" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3A6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              </div>
-              300 м² · 6 комнат
-            </div>
-            <div class="feat">
-              <div class="feat-ico" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3A6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-              </div>
-              11 соток · асфальт
-            </div>
-            <div class="feat">
-              <div class="feat-ico" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3A6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-              </div>
-              газ у границы · центр. вода
-            </div>
-            <div class="feat">
-              <div class="feat-ico" aria-hidden="true">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3A6BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              пристройка 60 м² · септик
-            </div>
-          </div>
-
-          <div class="card-seal">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C49A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Подойдет под гостевой дом или большую семью
-          </div>
-        </div>
+  <section class="section-shell" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Услуги</div>
+        <h2 id="services-title">Что можем взять на себя</h2>
+        <p>Ниже основные направления, с которыми к нам приходят чаще всего. Их объединяет одно: клиенту нужен не набор советов, а конкретный результат в разумные сроки.</p>
       </div>
-
-      <!-- floating review -->
-      <div class="float-review" aria-label="Отзыв клиента">
-        <div class="float-stars" aria-label="5 звёзд">★★★★★</div>
-        <div class="float-text">«Продали дом с ипотекой, хотя были сложности с документами»</div>
-        <div class="float-auth">Фирстова Е. — Яндекс Карты</div>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">01</div>
+          <h3>Подбор недвижимости</h3>
+          <p>Подбираем дома, квартиры и участки под конкретную цель: для жизни, переезда, посуточной аренды, спокойной дачи или вложения денег.</p>
+          <div class="service-list">
+            <span>Дома</span>
+            <span>Квартиры</span>
+            <span>Участки</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">02</div>
+          <h3>Продажа недвижимости под ключ</h3>
+          <p>Готовим объект к продаже, усиливаем подачу, помогаем с ценой, переговорами и документами, чтобы продажа не затягивалась на месяцы.</p>
+          <div class="service-list">
+            <span>Оценка</span>
+            <span>Продвижение</span>
+            <span>Переговоры</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">03</div>
+          <h3>Юридическое сопровождение сделки</h3>
+          <p>Проверяем объект, собственника, ограничения и историю переходов прав, чтобы вы входили в сделку с открытыми глазами.</p>
+          <div class="service-list">
+            <span>Проверка рисков</span>
+            <span>Аккредитив</span>
+            <span>Регистрация</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">04</div>
+          <h3>Оформление документов</h3>
+          <p>Приводим в порядок старые дома, участки, наследство, СНТ, доли и техплан, когда без этого невозможно спокойно жить, продавать или покупать.</p>
+          <div class="service-list">
+            <span>Наследство</span>
+            <span>СНТ</span>
+            <span>Регистрация права</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">05</div>
+          <h3>Газификация и коммуникации</h3>
+          <p>Сопровождаем подключение газа и воды: от документов и техусловий до согласований и прохождения организационных этапов.</p>
+          <div class="service-list">
+            <span>Газ</span>
+            <span>Вода</span>
+            <span>Согласования</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">06</div>
+          <h3>Ипотека и материнский капитал</h3>
+          <p>Помогаем пройти сделки, где важны банк, Домклик, СФР, материнский капитал, выделение долей детям и аккуратность в каждом документе.</p>
+          <div class="service-list">
+            <span>Домклик</span>
+            <span>СФР</span>
+            <span>Выделение долей</span>
+          </div>
+        </article>
       </div>
-
-      <!-- floating stat -->
-      <div class="float-stat" aria-label="Более 10 видов услуг">
-        <div class="stat-num">10+</div>
-        <div class="stat-lbl">видов услуг в одном месте</div>
-      </div>
-
-      <div class="dots" aria-hidden="true"></div>
     </div>
+  </section>
 
-  </div>
+  <section class="section-shell section-alt" id="objects" aria-labelledby="objects-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Каталог</div>
+        <h2 id="objects-title">Объекты, которые уже можно рассматривать предметно</h2>
+        <p>В подборке ниже не случайные позиции, а объекты, которые можно обсуждать по существу: кому подойдут, за что вы платите и где у каждого варианта сильная сторона.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card property-card">
+          <div class="property-media photo-1">
+            <span class="property-badge">Для семьи</span>
+            <span class="property-price">10 300 000 ₽</span>
+          </div>
+          <div class="property-copy">
+            <h3>Дом в Дивеево на Банула</h3>
+            <p>Новый дом 121,1 м² на 7 сотках. Тихий район, терраса, теплый пол, скважина, перспективный сценарий и для жизни, и для сдачи.</p>
+            <div class="property-meta">
+              <span>15 минут пешком до монастыря</span>
+              <span>3 спальни</span>
+              <span>2024 год</span>
+            </div>
+            <div class="catalog-card-actions">
+              <a href="object-diveevo-banula.html" class="btn-secondary">Смотреть объект</a>
+            </div>
+          </div>
+        </article>
+        <article class="review-card property-card">
+          <div class="property-media photo-2">
+            <span class="property-badge">Готовый дом</span>
+            <span class="property-price">8 000 000 ₽</span>
+          </div>
+          <div class="property-copy">
+            <h3>Кирпичный дом в Ардатове</h3>
+            <p>Кирпичный дом 91 м² с гаражом и участком 9,5 соток. Подходит для постоянного проживания, если нужен понятный объект с уже подключенными коммуникациями.</p>
+            <div class="property-meta">
+              <span>91 м²</span>
+              <span>9,5 соток</span>
+              <span>Газ, вода, свет</span>
+            </div>
+            <div class="catalog-card-actions">
+              <a href="object-ardatov-91.html" class="btn-secondary">Смотреть объект</a>
+            </div>
+          </div>
+        </article>
+        <article class="review-card property-card">
+          <div class="property-media photo-3">
+            <span class="property-badge">Недорогой сегмент</span>
+            <span class="property-price">1 800 000 ₽</span>
+          </div>
+          <div class="property-copy">
+            <h3>Дом в селе Поляна</h3>
+            <p>Готовый к проживанию деревянный дом с новой системой отопления, русской печью, баней и участком для жизни за городом.</p>
+            <div class="property-meta">
+              <span>3 минуты до Ардатова</span>
+              <span>6 соток</span>
+              <span>Газовый котел</span>
+            </div>
+            <div class="catalog-card-actions">
+              <a href="object-polyana-house.html" class="btn-secondary">Смотреть объект</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="ctas" style="margin-top: 28px;">
+        <a href="https://t.me/yul_ermilova_diveevo" class="btn-primary" target="_blank" rel="noopener noreferrer">Получить подборку под мой запрос</a>
+        <a href="#contacts" class="btn-secondary">Не нашли вариант? Оставьте задачу</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- scroll hint -->
-  <div class="scroll-hint" aria-hidden="true">
-    <div class="scroll-line"></div>
-    <span>Листайте</span>
-  </div>
-</section>
+  <section class="section-shell" id="audience" aria-labelledby="audience-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Аудитория</div>
+        <h2 id="audience-title">Кому мы особенно полезны</h2>
+        <p>У покупателей и собственников разные цели, страхи и критерии выбора. Поэтому мы не работаем по шаблону, а подстраиваем решение под реальную задачу человека.</p>
+      </div>
+      <div class="services-grid four-col">
+        <article class="service-card">
+          <div class="service-icon">A</div>
+          <h3>Для тех, кто покупает для себя</h3>
+          <p>Если вы выбираете для себя, смотрим не только на метры, но и на документы, тепло, воду, газ, подъезд, соседей и комфорт на годы вперед.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">B</div>
+          <h3>Для собственников</h3>
+          <p>Если вы продаете, поможем убрать слабые места в подаче, цене и документах, чтобы не зависнуть в бесконечных просмотрах без результата.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">C</div>
+          <h3>Для сложных ситуаций</h3>
+          <p>Если в вопросе есть наследство, СНТ, границы, доли, самострой, ипотека или маткапитал, выстраиваем маршрут действий без хаоса и догадок.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">D</div>
+          <h3>Для инвесторов</h3>
+          <p>Если рассматриваете объект как инвестицию, поможем оценить локацию, спрос, формат использования и реальный потенциал доходности.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<script>
-  function toggleDrawer() {
-    const drawer = document.getElementById('drawer');
-    const burger = document.getElementById('burger');
-    const open   = drawer.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-    const [s0, s1, s2] = burger.querySelectorAll('span');
-    if (open) {
-      s0.style.cssText = 'transform:rotate(45deg) translate(5px,5px)';
-      s1.style.cssText = 'opacity:0';
-      s2.style.cssText = 'transform:rotate(-45deg) translate(5px,-5px)';
-    } else {
-      s0.style.cssText = s1.style.cssText = s2.style.cssText = '';
-    }
-  }
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 880) {
+  <section class="section-shell section-alt" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Процесс</div>
+        <h2 id="process-title">Как строится работа</h2>
+        <p>Людям важно понимать, что будет после первого сообщения. Поэтому процесс у нас прозрачный: сначала разбираем ситуацию, затем предлагаем маршрут и ведем по шагам.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card">
+          <div class="process-step">1</div>
+          <h3>Вы описываете задачу</h3>
+          <p>Покупка, продажа, документы, газ, техплан, ипотека, маткапитал, СНТ или другая ситуация, где нужен понятный порядок действий.</p>
+        </article>
+        <article class="process-card">
+          <div class="process-step">2</div>
+          <h3>Мы разбираем исходные данные</h3>
+          <p>Смотрим документы, вводные, ограничения и слабые места, чтобы сразу понять, где реальные риски, а где вопрос решается спокойно.</p>
+        </article>
+        <article class="process-card">
+          <div class="process-step">3</div>
+          <h3>Предлагаем маршрут решения</h3>
+          <p>Это может быть подбор объектов, стратегия продажи, план по документам или сопровождение под ключ с понятной логикой каждого этапа.</p>
+        </article>
+        <article class="process-card">
+          <div class="process-step">4</div>
+          <h3>Доводим до результата</h3>
+          <p>Сопровождаем до финала, чтобы вопрос не завис на полпути из-за отказов, новых требований, непонятных согласований или потери времени.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" id="cases" aria-labelledby="cases-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Сложные случаи</div>
+        <h2 id="cases-title">Если ситуация запутанная, это еще не значит, что она безвыходная</h2>
+        <p>Часто к нам приходят уже не за общими рекомендациями, а тогда, когда нужно разложить все по полкам, убрать риски и наконец сдвинуть вопрос с места.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="panel">
+          <h3>С какими вопросами приходят чаще всего</h3>
+          <div class="bullet-list">
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Дом без документов или старый объект, который нужно сначала оформить, а уже потом спокойно продавать или использовать.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Участок без точных границ, наложения по ЕГРН, СНТ, спорный статус дома или проблемы с видом разрешенного использования.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Наследство, пропущенные сроки, доли, дети в сделке, ипотека и материнский капитал.</span></div>
+            <div class="bullet-item"><span class="bullet-dot"></span><span>Необходимость подключить газ или воду и довести объект до полноценного жилого состояния.</span></div>
+          </div>
+        </div>
+        <div class="stats-col">
+          <div class="info-card">
+            <div class="info-label">Подход</div>
+            <div class="info-value">Честно</div>
+            <p>Не обещаем невозможное: сначала оцениваем, что реально можно решить, и только потом предлагаем путь работы.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-label">Формат</div>
+            <div class="info-value">По шагам</div>
+            <p>Вы получаете не абстрактные советы, а понятную схему: что делать, в какой последовательности и зачем.</p>
+          </div>
+          <div class="info-card">
+            <div class="info-label">Результат</div>
+            <div class="info-value">До результата</div>
+            <p>Цель не в том, чтобы «начать процесс», а в том, чтобы завершить сделку или получить оформленный и пригодный к использованию объект.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell section-alt" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Отзывы</div>
+        <h2 id="reviews-title">Отзывы клиентов, которым нужен был не совет, а результат</h2>
+        <p>Для таких услуг важнее всего не красивые обещания, а реальные истории клиентов: продали, оформили, провели ипотеку, решили вопрос с документами и дошли до результата.</p>
+      </div>
+      <div class="reviews-grid">
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>Мне нужна была помощь в решении нетипичного жилищного вопроса, в итоге помогли только в этом агентстве. Очень благодарна девочкам! Однозначно рекомендую к сотрудничеству! Проблема решена, душа спокойна 👍</p>
+          <div class="review-author">Елена Евгеньевна</div>
+          <div class="review-source">29 июня</div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>Спасибо девочкам, продала с их помощью свой дом, хотя были сложности с документами. Но все решили, провели сделку с ипотекой. И сейчас покупаю с их помощью дом в другом регионе. Рекомендую!!! Завершаем сделку!</p>
+          <div class="review-author">178411 Фирстова</div>
+          <div class="review-source">20 июня</div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>Молодые, красивые девчонки. Грамотные! Проконсультировали по семейной ипотеке с использованием маткапитала. Начали строительство</p>
+          <div class="review-author">Имя К.</div>
+          <div class="review-source">16 июня</div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p>Спасибо Юле и Кате! Помогли провести ипотечную сделку с льготными деньгами. Решили вопрос со страховкой (банк свою не давал), восстановили все документы для оценки, оперативно ее сделали. Дом уже обживаем, всем довольны. Рада, что обратилась именно в это агентство!</p>
+          <div class="review-author">Юлия Жабицкая</div>
+          <div class="review-source">29 мая</div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section-shell" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">Частые вопросы</div>
+        <h2 id="faq-title">Что обычно спрашивают перед обращением</h2>
+        <p>Ниже коротко отвечаем на основные вопросы, которые чаще всего возникают до первого сообщения или звонка.</p>
+      </div>
+      <div class="services-grid four-col">
+        <article class="service-card faq-item">
+          <h3>Беретесь ли вы за объекты со сложными документами?</h3>
+          <p>Да. Сначала смотрим исходные данные и честно говорим, что можно решить, где будут ограничения и какие шаги понадобятся дальше.</p>
+        </article>
+        <article class="service-card faq-item">
+          <h3>Можно ли провести часть задач по доверенности?</h3>
+          <p>Во многих случаях да. Это удобно, если вы живете не в Дивеево, заняты работой или не хотите лично проходить каждый организационный этап.</p>
+        </article>
+        <article class="service-card faq-item">
+          <h3>Поможете ли с ипотекой и материнским капиталом?</h3>
+          <p>Да, сопровождаем сделки с банками, Домклик, СФР, маткапиталом, выделением долей детям и полной проверкой объекта до покупки.</p>
+        </article>
+        <article class="service-card faq-item">
+          <h3>Если в каталоге нет нужного объекта, можно ли получить подбор?</h3>
+          <p>Да. Часть вариантов ищется под конкретный запрос и может не публиковаться в открытом каталоге до появления реального заинтересованного покупателя.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell" id="contacts" aria-labelledby="contacts-title">
+    <div class="container">
+      <div class="cta-panel">
+        <div class="cta-copy">
+          <div class="section-kicker">Контакты</div>
+          <h2 id="contacts-title">Опишите задачу, и мы скажем, какой путь будет самым разумным</h2>
+          <p>Если вам нужно купить, продать, оформить, проверить или подключить объект, лучше сразу разобрать ситуацию по существу. Это экономит время, деньги и снижает риск ошибок уже на старте.</p>
+          <div class="mini-note">
+            <span class="bullet-dot" aria-hidden="true"></span>
+            <span>Адрес: Нижегородская область, село Дивеево, Молодежная улица, 52. Пишите даже если ситуация кажется сложной: наследство, СНТ, самострой, ипотека, маткапитал, газ, вода, проблемная продажа или покупка с рисками.</span>
+          </div>
+        </div>
+        <div class="cta-actions">
+          <a href="https://t.me/yul_ermilova_diveevo" class="btn-primary" target="_blank" rel="noopener noreferrer">Написать нам</a>
+          <a href="tel:+79601711320" class="btn-secondary">+7 (960) 171-13-20</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" aria-label="Подвал сайта">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Дивеево Интеграл - на главную">
+            <div class="logo-mark" aria-hidden="true">
+              <img src="landing_logo_x2.jpg" alt="">
+            </div>
+            <div>
+              <div class="logo-title">Дивеево Интеграл</div>
+              <div class="logo-subtitle">Недвижимость, сделки и сопровождение</div>
+            </div>
+          </a>
+          <p>Помогаем купить, продать, проверить и оформить недвижимость в Дивеево и рядом. Берём на себя сложные сделки, документы и коммуникации.</p>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Навигация</h3>
+          <div class="footer-links">
+            <a href="catalog.html">Каталог</a>
+            <a href="#services">Услуги</a>
+            <a href="#objects">Объекты</a>
+            <a href="#reviews">Отзывы</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Направления</h3>
+          <div class="footer-links">
+            <a href="buy.html">Купить недвижимость</a>
+            <a href="sell.html">Продать объект</a>
+            <a href="mortgage.html">Ипотека и маткапитал</a>
+            <a href="services-documents.html">Документы и оформление</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Контакты</h3>
+          <div class="footer-contact">
+            <a href="tel:+79601711320">+7 (960) 171-13-20</a>
+            <a href="https://t.me/yul_ermilova_diveevo" target="_blank" rel="noopener noreferrer">@yul_ermilova_diveevo</a>
+            <a href="#contacts">Нижегородская область, Дивеево, Молодежная, 52</a>
+          </div>
+          <a href="https://t.me/yul_ermilova_diveevo" class="footer-cta" target="_blank" rel="noopener noreferrer">Связаться с нами</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        Дивеево Интеграл. Недвижимость, документы и сопровождение сделок в Дивеево и рядом.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDrawer() {
       const drawer = document.getElementById('drawer');
       const burger = document.getElementById('burger');
-      drawer.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      const [s0, s1, s2] = burger.querySelectorAll('span');
-      s0.style.cssText = s1.style.cssText = s2.style.cssText = '';
+      const isOpen = drawer.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+
+      const lines = burger.querySelectorAll('span');
+      if (isOpen) {
+        lines[0].style.transform = 'translateY(7px) rotate(45deg)';
+        lines[1].style.opacity = '0';
+        lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
     }
-  });
-</script>
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) {
+        const drawer = document.getElementById('drawer');
+        const burger = document.getElementById('burger');
+        const lines = burger.querySelectorAll('span');
+        drawer.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        lines[0].style.transform = '';
+        lines[1].style.opacity = '';
+        lines[2].style.transform = '';
+      }
+    });
+  </script>
 </body>
 </html>
